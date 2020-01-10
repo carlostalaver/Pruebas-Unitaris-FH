@@ -3,20 +3,24 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { MedicoService } from './medico.service';
 import { HttpClientModule } from '@angular/common/http';
 
-xdescribe('Medico component 2', () => {
+xdescribe('Medico component 2 - Pruebas de integración Básica', () => {
 
   let medicoCom: MedicoComponent;
   let fixture: ComponentFixture<MedicoComponent>;
 
-  // Configuro el TestBed
+  // Configuro el TestBed para decir a Angular que trabaje con su ciclo de detección de cambio, etc
   beforeEach(() => {
+
     TestBed.configureTestingModule({
       declarations: [MedicoComponent],
-      imports: [HttpClientModule],
-      providers: [MedicoService]
+      providers: [MedicoService],
+      imports: [HttpClientModule], // lo importé xq en MedicoService se inyecta HttpClient y este servicio se encuenta en este modulo
     });
+
+    /* Le pido a Angular un componente ya compilado por el TestBed y así
+       poder manipular el HTML, elementos del DOM, etc. */
     fixture = TestBed.createComponent(MedicoComponent);
-    medicoCom = fixture.componentInstance;
+    medicoCom = fixture.componentInstance; // pido una Intancia del componente creado por TestBed
   });
 
   it('Debe de crearse el componente', () => {

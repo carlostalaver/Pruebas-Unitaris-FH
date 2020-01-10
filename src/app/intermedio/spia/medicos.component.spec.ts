@@ -59,7 +59,7 @@ describe('MedicosComponent', () => {
         expect(medicoComp.mensajeError).toBe(miError);
     });
 
-    it('debe de llamar al servidor para borrar un médico', () => {
+    xit('debe de llamar al servidor para borrar un médico', () => {
         /* para simular un click de confirmacion en el prompt, NOTAR que en el 
            metodo borrarMedico está dicho confirm, es por ello que lo estoy simulando 
            con este spia  */
@@ -72,7 +72,7 @@ describe('MedicosComponent', () => {
         expect(espia).toHaveBeenCalledWith('1');
     });
 
-    it('No debe de llamar al servidor para borrar un médico', () => {
+    xit('No debe de llamar al servidor para borrar un médico', () => {
         /* para simular un click de confirmacion en el prompt, NOTAR que en el 
            metodo borrarMedico está dicho confirm, es por ello que lo estoy simulando 
            con este spia  */

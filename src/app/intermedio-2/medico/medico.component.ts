@@ -18,7 +18,7 @@ export class MedicoComponent implements OnInit {
     return `Hola ${nombre}`;
   }
 
-  obtenerMedico(){ 
+  obtenerMedico() {
     this.medicoService.getMedico()
       .subscribe( (res: any[]) => {
         this.medicos = res;
